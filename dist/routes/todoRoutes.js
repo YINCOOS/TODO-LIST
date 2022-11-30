@@ -7,5 +7,7 @@ const express_1 = __importDefault(require("express"));
 const todoController_1 = require("../controller/todoController");
 const router = express_1.default.Router();
 router.post('/create', todoController_1.createTodo);
-router.get('/get-all-todos', todoController_1.createTodo);
+router.get('/get-all-todos', todoController_1.getTodo);
+router.patch('/:id', todoController_1.updateTodo);
+router.delete('/:id', todoController_1.deleteTodo);
 exports.default = router;

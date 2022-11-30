@@ -81,11 +81,11 @@ export const getTodo = async (req:Request, res:Response) =>{
 
         const todos = await Todo.find({})
 
-        res.status(201).json(todos)
+        return res.status(201).json(todos)
 
     } catch(error){
 
-        res.status(500).json({
+        return res.status(500).json({
 
             Error: "Internal server error /get-all-todos"
 
@@ -111,7 +111,7 @@ export const deleteTodo = async (req:Request, res:Response) =>{
 
             message: "Todo successfully deleted",
 
-            databaseData: await getTodo(req,res)
+         
 
         })
 

@@ -19,7 +19,7 @@ mongoose.connect(process.env.DATABASE_URL!, ()=>{
 
 app.use(express.json())
 app.use(logger("dev"))
-app.use('/todo', todoRouter)
+app.use('/', todoRouter)
 // app.use('/',)
 
 const Port = 4000;

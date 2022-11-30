@@ -53,10 +53,10 @@ exports.createTodo = createTodo;
 const getTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const todos = yield todoModel_1.default.find({});
-        res.status(201).json(todos);
+        return res.status(201).json(todos);
     }
     catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             Error: "Internal server error /get-all-todos"
         });
     }
@@ -68,7 +68,6 @@ const deleteTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const findTodo = yield todoModel_1.default.findByIdAndDelete({ _id: id });
         return res.status(201).json({
             message: "Todo successfully deleted",
-            databaseData: yield (0, exports.getTodo)(req, res)
         });
     }
     catch (error) {
